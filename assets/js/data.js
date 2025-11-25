@@ -38,6 +38,15 @@ const seedProducts = [
     stock: 30,
     idCategoria: 2,
     imagen_data: "assets/img/productos/pintura.png"
+  },
+  {
+    idProducto: 4,
+    nombreProducto: "Tee de PVC 1/2 pulg DURMAN",
+    descripcion: "Conector en forma de T para instalaciones de tubería en PVC.",
+    precio: 0.24,
+    stock: 100,
+    idCategoria: 4,
+    imagen_data: "assets/img/productos/tee_pvc_1_2.jpg"
   }
 ];
 
