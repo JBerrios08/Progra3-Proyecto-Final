@@ -2,7 +2,8 @@
 //  PANEL PRODUCTOS - PERMISOS CORRECTOS
 // ======================================
 
-requireRole(["admin", "supervisor"]);
+// Admin y supervisor pueden crear/editar. Team solo puede ver.
+requireRole(["admin", "supervisor", "team"]);
 const user = getSession();
 
 const rolInfo = document.querySelector("#rolInfo");
