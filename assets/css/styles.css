@@ -128,13 +128,60 @@ body{
   font-size:1.1rem;
 }
 
-footer{
-  color: var(--fo-muted);
-  font-size:.9rem;
-  padding:20px 0;
-  border-top:1px solid #e5e7eb;
-  background:#fff;
+.site-footer{
+  background: var(--fo-dark);
+  color:#e5e7eb;
   margin-top:40px;
+  padding:40px 0 12px;
+}
+
+.site-footer h6,
+.site-footer h5{
+  color:#fff;
+}
+
+.footer-brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.footer-icon{
+  width:46px;
+  height:46px;
+  display:grid;
+  place-items:center;
+  border-radius:12px;
+  background:#0d6efd;
+  color:#fff;
+  box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+.footer-list{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+.footer-list li{
+  display:flex;
+  align-items:center;
+  gap:.65rem;
+  padding:.35rem 0;
+  color:#e5e7eb;
+}
+
+.footer-list i{
+  width:18px;
+  text-align:center;
+}
+
+.footer-meta{
+  border-top:1px solid rgba(255,255,255,.08);
+  margin-top:24px;
+  padding-top:18px;
+  color:#9ca3af;
+  font-size:.9rem;
 }
 
 .table{
