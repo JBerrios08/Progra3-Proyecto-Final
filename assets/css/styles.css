@@ -58,10 +58,16 @@ body{
 }
 
 .card-product img{
-  height: 180px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   border-top-left-radius:16px;
   border-top-right-radius:16px;
+  background: #f8fafc;
+}
+
+.product-img{
+  display: block;
 }
 
 .price{
