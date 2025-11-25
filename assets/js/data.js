@@ -47,7 +47,44 @@ const seedProducts = [
     stock: 100,
     idCategoria: 4,
     imagen_data: "assets/img/productos/tee_pvc_1_2.jpg"
-  }
+  },
+  {
+    idProducto: 5,
+    nombreProducto: "Toma superficial hembra doble 15A 120VAC EAGLE",
+    descripcion: "Toma eléctrica doble polarizada para uso residencial y comercial.",
+    precio: 2.20,
+    stock: 50,
+    idCategoria: 3,
+    imagen_data: "assets/img/productos/toma_superficial_doble.jpg"
+},
+{
+  idProducto: 6,
+  nombreProducto: "Interruptor superficial 10A 125VAC BTICINO",
+  descripcion: "Interruptor unipolar para instalación superficial, ideal para uso residencial.",
+  precio: 1.90,
+  stock: 60,
+  idCategoria: 3,
+  imagen_data: "assets/img/productos/interruptor_superficial_bticino.jpg"
+},
+{
+  idProducto: 7,
+  nombreProducto: "Pintura esmalte melocotón 3.78L (gal) CORONA",
+  descripcion: "Esmalte alquídico de alto cubrimiento, resistente a la abrasión, lavado y desgaste. Ideal para mampostería, block, madera y metal.",
+  precio: 18.35,
+  stock: 40,
+  idCategoria: 2,
+  imagen_data: "assets/img/productos/pintura_melocoton_corona.jpg"
+},
+{
+  idProducto: 8,
+  nombreProducto: "Tubo PVC 160 psi de 1 pulg (25.40 mm)",
+  descripcion: "Tubo de PVC para uso hidráulico, resistente a 160 psi. Ideal para instalaciones de agua fría.",
+  precio: 4.15,
+  stock: 80,
+  idCategoria: 4,
+  imagen_data: "assets/img/productos/tubo_pvc_1_pulg_160psi.jpg"
+}
+
 ];
 
 // Usuarios oficiales (los que me diste)
