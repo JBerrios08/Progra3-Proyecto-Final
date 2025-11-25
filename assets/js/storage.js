@@ -13,8 +13,20 @@ const LS = {
 };
 
 function initStorage() {
-  if (!localStorage.getItem(LS.categories)) {
+  // Asegurar que las categorías existan siempre para poblar selects
+  const storedCategories = localStorage.getItem(LS.categories);
+  if (!storedCategories) {
     localStorage.setItem(LS.categories, JSON.stringify(seedCategories));
+  } else {
+    try {
+      const parsed = JSON.parse(storedCategories);
+      if (!Array.isArray(parsed) || parsed.length === 0) {
+        localStorage.setItem(LS.categories, JSON.stringify(seedCategories));
+      }
+    } catch (err) {
+      // Datos corruptos: resembrar
+      localStorage.setItem(LS.categories, JSON.stringify(seedCategories));
+    }
   }
   if (!localStorage.getItem(LS.products)) {
     localStorage.setItem(LS.products, JSON.stringify(seedProducts));
