@@ -24,6 +24,14 @@ function initStorage() {
     const seedsById = new Map(seedProducts.map(p => [p.idProducto, p.imagen_data]));
     let touched = false;
 
+    // Sincronizar nuevas semillas que se agreguen en el tiempo
+    seedProducts.forEach(seed => {
+      if (!products.some(p => p.idProducto === seed.idProducto)) {
+        products.push(seed);
+        touched = true;
+      }
+    });
+
     products.forEach(p => {
       // Migrar del antiguo campo "imagen" y validar rutas/base64
       if (!p.imagen_data && p.imagen) {
