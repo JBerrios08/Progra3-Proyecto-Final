@@ -7,7 +7,13 @@ function getSession() {
 }
 
 function setSession(user) {
-  localStorage.setItem(LS.session, JSON.stringify(user));
+  const sessionSafeUser = {
+    idUsuario: user.idUsuario,
+    nombre: user.nombre,
+    correo: user.correo,
+    rol: user.rol
+  };
+  localStorage.setItem(LS.session, JSON.stringify(sessionSafeUser));
 }
 
 function logout() {
@@ -24,7 +30,7 @@ function login(correo, password) {
   if (!user) return { ok: false, msg: "Correo o contraseña incorrectos" };
 
   setSession(user);
-  return { ok: true, user };
+  return { ok: true, user: getSession() };
 }
 
 function register(nombre, correo, password) {
@@ -53,7 +59,13 @@ function register(nombre, correo, password) {
 
 function requireRole(roles = []) {
   const user = getSession();
-  if (!user || !roles.includes(user.rol)) {
+  if (!user) {
     location.href = "login.html";
+    return;
+  }
+
+  if (!roles.includes(user.rol)) {
+    alert("No tienes permisos para acceder a esta sección.");
+    location.href = "tienda.html";
   }
 }

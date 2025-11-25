@@ -87,5 +87,8 @@ window.editUser = (id)=>{
   u.rol = rol;
 
   setLS(LS.users, users);
+  if (u.idUsuario === user.idUsuario) {
+    setSession(u);
+  }
   renderUsers();
 };

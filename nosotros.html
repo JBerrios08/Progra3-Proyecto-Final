@@ -93,6 +93,7 @@
 <script>
   const user = getSession();
   const menu = document.querySelector("#userMenu");
+  const canAccessPanel = user && ["admin", "supervisor"].includes(user.rol);
 
   if (!user) {
     menu.innerHTML = `
@@ -100,7 +101,7 @@
       <li><a class="dropdown-item" href="login.html#registro">Registrarme</a></li>
     `;
   } else {
-    let adminBtn = user.rol !== "usuario" ? `<li><a class="dropdown-item" href="admin.html">Panel</a></li>` : "";
+    let adminBtn = canAccessPanel ? `<li><a class="dropdown-item" href="admin.html">Panel</a></li>` : "";
     menu.innerHTML = `
       <li class="px-3 py-2 small text-muted">Hola, ${user.nombre} (${user.rol})</li>
       ${adminBtn}

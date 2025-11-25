@@ -2,7 +2,7 @@
 //  PANEL PRODUCTOS - PERMISOS CORRECTOS
 // ======================================
 
-requireRole(["admin", "supervisor", "team"]);
+requireRole(["admin", "supervisor"]);
 const user = getSession();
 
 const rolInfo = document.querySelector("#rolInfo");
