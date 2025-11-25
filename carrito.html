@@ -12,31 +12,39 @@
 <body>
 
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark">
   <div class="container">
-    <a class="navbar-brand fw-bold" href="index.html">Ferro Oriente</a>
+    <a class="navbar-brand" href="index.html">
+      <span class="brand-icon"><i class="fa-solid fa-hammer"></i></span>
+      <span class="lh-1">
+        <span class="d-block">Ferro Oriente</span>
+        <small class="nav-meta d-none d-md-block">Ferretería &amp; construcción</small>
+      </span>
+    </a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="menu">
-      <ul class="navbar-nav me-auto gap-3">
-        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-        <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
-        <li class="nav-item"><a class="nav-link" href="tienda.html">Tienda</a></li>
-        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-2">
+        <li class="nav-item"><a class="nav-link" href="index.html"><i class="fa-solid fa-house"></i><span>Inicio</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="nosotros.html"><i class="fa-solid fa-people-group"></i><span>Nosotros</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="tienda.html"><i class="fa-solid fa-shop"></i><span>Tienda</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="contacto.html"><i class="fa-solid fa-phone"></i><span>Contacto</span></a></li>
       </ul>
 
-      <div class="d-flex align-items-center gap-3">
-        <a href="carrito.html" class="text-white position-relative">
-          <i class="fa-solid fa-cart-shopping fs-5"></i>
-          <span id="cartBadge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+      <div class="d-flex align-items-center gap-2">
+        <a href="carrito.html" class="cart-link position-relative">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="d-none d-sm-inline">Carrito</span>
+          <span id="cartBadge" class="cart-badge badge rounded-pill bg-danger">0</span>
         </a>
 
         <div class="dropdown">
-          <a class="text-white dropdown-toggle" href="#" data-bs-toggle="dropdown">
-            <i class="fa-solid fa-user fs-5"></i>
+          <a class="btn user-toggle dropdown-toggle d-flex align-items-center gap-2" href="#" data-bs-toggle="dropdown">
+            <i class="fa-solid fa-user"></i>
+            <span class="d-none d-sm-inline">Cuenta</span>
           </a>
           <ul id="userMenu" class="dropdown-menu dropdown-menu-end"></ul>
         </div>
