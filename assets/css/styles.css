@@ -1,0 +1,110 @@
+/* =============================
+   Ferro Oriente - UI Pro
+   ============================= */
+
+:root{
+  --fo-primary:#0d6efd;
+  --fo-dark:#111827;
+  --fo-muted:#6b7280;
+  --fo-bg:#f5f7fb;
+  --fo-card:#ffffff;
+}
+
+body{
+  background: var(--fo-bg);
+  color:#111;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+.navbar{
+  background: var(--fo-dark) !important;
+  box-shadow: 0 6px 18px rgba(0,0,0,.12);
+}
+
+.navbar-brand{
+  font-weight:800;
+  letter-spacing:.6px;
+}
+
+.nav-link{
+  font-weight:500;
+  opacity:.9;
+}
+.nav-link.active{
+  font-weight:700;
+  opacity:1;
+}
+
+.hero{
+  background: radial-gradient(1200px circle at top, #eaf1ff, #ffffff);
+  border-bottom:1px solid #e5e7eb;
+}
+
+.hero h1{
+  font-weight:800;
+  letter-spacing:.3px;
+}
+
+.section-title{
+  font-weight:800;
+  margin-bottom:1rem;
+}
+
+.card{
+  background: var(--fo-card);
+  border:0;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(17,24,39,.06);
+}
+
+.card-product img{
+  height: 180px;
+  object-fit: cover;
+  border-top-left-radius:16px;
+  border-top-right-radius:16px;
+}
+
+.price{
+  font-weight:800;
+  font-size:1.05rem;
+}
+
+.badge-stock{
+  font-size:.78rem;
+  background:#eef2ff !important;
+  color:#3730a3 !important;
+  font-weight:700;
+}
+
+.btn{
+  border-radius: 12px;
+  font-weight:700;
+}
+
+footer{
+  color: var(--fo-muted);
+  font-size:.9rem;
+  padding:20px 0;
+  border-top:1px solid #e5e7eb;
+  background:#fff;
+  margin-top:40px;
+}
+
+.table{
+  background:white;
+  border-radius:12px;
+  overflow:hidden;
+}
+
+input, textarea, select{
+  border-radius:12px !important;
+}
+
+.alert{
+  border-radius:12px;
+}
+
+/* Responsive tweaks */
+@media (max-width:576px){
+  .card-product img{ height:160px; }
+}

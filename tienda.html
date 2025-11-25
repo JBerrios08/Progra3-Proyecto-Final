@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Ferro Oriente | Tienda</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">Ferro Oriente</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav me-auto gap-3">
+        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link active" href="tienda.html">Tienda</a></li>
+        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+      </ul>
+
+      <div class="d-flex align-items-center gap-3">
+        <a href="carrito.html" class="text-white position-relative">
+          <i class="fa-solid fa-cart-shopping fs-5"></i>
+          <span id="cartBadge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+        </a>
+
+        <div class="dropdown">
+          <a class="text-white dropdown-toggle" href="#" data-bs-toggle="dropdown">
+            <i class="fa-solid fa-user fs-5"></i>
+          </a>
+          <ul id="userMenu" class="dropdown-menu dropdown-menu-end"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- CONTENIDO -->
+<div class="container py-4">
+
+  <div class="d-flex flex-wrap justify-content-between align-items-center mb-3 gap-2">
+    <div>
+      <h3 class="fw-bold m-0">Tienda</h3>
+      <p class="text-muted m-0">Explora nuestros productos por categoría</p>
+    </div>
+
+    <div class="d-flex align-items-center gap-2">
+      <i class="fa-solid fa-filter text-muted"></i>
+      <select id="categoriaFilter" class="form-select w-auto"></select>
+    </div>
+  </div>
+
+  <div class="row" id="productosGrid"></div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container text-center">
+    Ferro Oriente © 2025
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="assets/js/data.js"></script>
+<script src="assets/js/storage.js"></script>
+<script src="assets/js/auth.js"></script>
+<script src="assets/js/carrito.js"></script>
+<script src="assets/js/tienda.js"></script>
+
+<script>
+  // Menú usuario
+  const user = getSession();
+  const menu = document.querySelector("#userMenu");
+
+  if (!user) {
+    menu.innerHTML = `
+      <li><a class="dropdown-item" href="login.html">Ingresar</a></li>
+      <li><a class="dropdown-item" href="login.html#registro">Registrarme</a></li>
+    `;
+  } else {
+    let panelBtn = user.rol !== "usuario" ? `<li><a class="dropdown-item" href="admin.html">Panel</a></li>` : "";
+    menu.innerHTML = `
+      <li class="px-3 py-2 small text-muted">Hola, ${user.nombre} (${user.rol})</li>
+      ${panelBtn}
+      <li><hr class="dropdown-divider"></li>
+      <li><button class="dropdown-item text-danger" onclick="logout()">Cerrar sesión</button></li>
+    `;
+  }
+
+  updateCartBadge();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
