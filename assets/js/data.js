@@ -19,7 +19,7 @@ const seedProducts = [
     precio: 8.50,
     stock: 20,
     idCategoria: 1,
-    imagen_data: "assets/img/productos/martillo.jpg"
+    imagen_data: "assets/img/productos/martillo.png"
   },
   {
     idProducto: 2,
@@ -28,7 +28,7 @@ const seedProducts = [
     precio: 45.00,
     stock: 10,
     idCategoria: 1,
-    imagen_data: "assets/img/productos/taladro.jpg"
+    imagen_data: "assets/img/productos/taladro.png"
   },
   {
     idProducto: 3,
@@ -37,7 +37,7 @@ const seedProducts = [
     precio: 18.75,
     stock: 30,
     idCategoria: 2,
-    imagen_data: "assets/img/productos/pintura.jpg"
+    imagen_data: "assets/img/productos/pintura.png"
   }
 ];
 
