@@ -25,7 +25,13 @@ function initStorage() {
     let touched = false;
 
     products.forEach(p => {
-      if (!p.imagen_data) {
+      // Migrar del antiguo campo "imagen" y validar rutas/base64
+      if (!p.imagen_data && p.imagen) {
+        p.imagen_data = p.imagen;
+        touched = true;
+      }
+
+      if (!p.imagen_data || String(p.imagen_data).trim() === "") {
         p.imagen_data = seedsById.get(p.idProducto) || "assets/img/productos/martillo.png";
         touched = true;
       }
