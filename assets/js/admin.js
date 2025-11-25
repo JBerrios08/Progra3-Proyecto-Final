@@ -24,9 +24,18 @@ if (user.rol === "team") {
 
 // Cargar categorías
 const cats = getLS(LS.categories);
-catSelect?.innerHTML = cats.map(c =>
-  `<option value="${c.idCategoria}">${c.nombreCategoria}</option>`
-).join("");
+
+if (catSelect) {
+  if (cats.length === 0) {
+    catSelect.innerHTML = "<option disabled selected>No hay categorías disponibles</option>";
+    catSelect.setAttribute("disabled", "disabled");
+  } else {
+    catSelect.innerHTML = cats.map(c =>
+      `<option value="${c.idCategoria}">${c.nombreCategoria}</option>`
+    ).join("");
+    catSelect.removeAttribute("disabled");
+  }
+}
 
 // Helpers
 function catName(idCat){
