@@ -262,10 +262,75 @@ body{
   color:#e5e7eb;
 }
 
+.footer-link{
+  color:#e5e7eb;
+  text-decoration:none;
+  font-weight:700;
+}
+
+.footer-link:hover{
+  color:#fff;
+  text-decoration:underline;
+}
+
 .footer-list i{
   width:18px;
   text-align:center;
 }
+
+.footer-social{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  align-items:center;
+}
+
+.social-pill{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 12px;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:800;
+  font-size:.9rem;
+  border:1px solid transparent;
+  transition:all .2s ease;
+}
+
+.social-pill i{ font-size:1rem; }
+
+.social-pill.whatsapp{
+  background:rgba(34,197,94,.12);
+  color:#34d399;
+  border-color:rgba(34,197,94,.35);
+}
+
+.social-pill.whatsapp:hover{
+  background:rgba(34,197,94,.18);
+  color:#22c55e;
+  box-shadow:0 12px 30px rgba(34,197,94,.2);
+}
+
+.social-pill.facebook{
+  background:rgba(59,130,246,.12);
+  color:#93c5fd;
+  border-color:rgba(59,130,246,.35);
+}
+
+.social-pill.facebook:hover{
+  background:rgba(59,130,246,.18);
+  color:#bfdbfe;
+  box-shadow:0 12px 30px rgba(59,130,246,.2);
+}
+
+.contact-link{
+  color:var(--fo-primary);
+  font-weight:700;
+  text-decoration:none;
+}
+
+.contact-link:hover{ text-decoration:underline; }
 
 .footer-meta{
   border-top:1px solid rgba(255,255,255,.08);
