@@ -21,10 +21,15 @@ function renderProductos(catId = "") {
     return;
   }
 
-  grid.innerHTML = filtrados.map(p => `
+  const fallbackImg = "assets/img/productos/martillo.png";
+
+  grid.innerHTML = filtrados.map(p => {
+    const imagenSrc = (p.imagen_data && String(p.imagen_data).trim()) ? p.imagen_data : fallbackImg;
+
+    return `
     <div class="col-md-3 mb-3">
       <div class="card card-product h-100 shadow-sm">
-        <img src="${p.imagen_data}" class="card-img-top" alt="${p.nombreProducto}">
+        <img src="${imagenSrc}" class="card-img-top product-img" alt="${p.nombreProducto}" onerror="this.src='${fallbackImg}'">
         <div class="card-body d-flex flex-column">
           <h6 class="fw-bold">${p.nombreProducto}</h6>
           <p class="small text-muted">${p.descripcion}</p>
@@ -40,7 +45,8 @@ function renderProductos(catId = "") {
         </div>
       </div>
     </div>
-  `).join("");
+  `;
+  }).join("");
 }
 
 filter.addEventListener("change", e => renderProductos(e.target.value));
