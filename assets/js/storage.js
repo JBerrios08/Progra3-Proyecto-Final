@@ -18,6 +18,26 @@ function initStorage() {
   }
   if (!localStorage.getItem(LS.products)) {
     localStorage.setItem(LS.products, JSON.stringify(seedProducts));
+  } else {
+    // Reparar productos existentes que no tengan ruta/imagen para evitar tarjetas vacías
+    const products = getLS(LS.products);
+    const seedsById = new Map(seedProducts.map(p => [p.idProducto, p.imagen_data]));
+    let touched = false;
+
+    products.forEach(p => {
+      // Migrar del antiguo campo "imagen" y validar rutas/base64
+      if (!p.imagen_data && p.imagen) {
+        p.imagen_data = p.imagen;
+        touched = true;
+      }
+
+      if (!p.imagen_data || String(p.imagen_data).trim() === "") {
+        p.imagen_data = seedsById.get(p.idProducto) || "assets/img/productos/martillo.png";
+        touched = true;
+      }
+    });
+
+    if (touched) setLS(LS.products, products);
   }
   if (!localStorage.getItem(LS.users)) {
     localStorage.setItem(LS.users, JSON.stringify(seedUsers));
