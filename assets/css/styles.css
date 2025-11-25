@@ -81,13 +81,107 @@ body{
   font-weight:700;
 }
 
-footer{
-  color: var(--fo-muted);
-  font-size:.9rem;
-  padding:20px 0;
-  border-top:1px solid #e5e7eb;
-  background:#fff;
+.info-block{
+  background: var(--fo-card);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(17,24,39,.06);
+  border:1px solid #e5e7eb;
+}
+
+.info-icon{
+  width:58px;
+  height:58px;
+  display:grid;
+  place-items:center;
+  border-radius:14px;
+  font-size:1.4rem;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.8);
+}
+
+.info-list li{
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+  padding:.55rem 0;
+  font-weight:600;
+  color:#111827;
+}
+
+.info-list i{
+  font-size:1.3rem;
+}
+
+.branch-card{
+  border:1px dashed #e5e7eb;
+  border-radius:12px;
+  padding:14px 16px;
+  margin-bottom:12px;
+  background:#fcfcff;
+}
+
+.branch-icon{
+  width:46px;
+  height:46px;
+  display:grid;
+  place-items:center;
+  border-radius:12px;
+  font-size:1.1rem;
+}
+
+.site-footer{
+  background: var(--fo-dark);
+  color:#e5e7eb;
   margin-top:40px;
+  padding:40px 0 12px;
+}
+
+.site-footer h6,
+.site-footer h5{
+  color:#fff;
+}
+
+.footer-brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.footer-icon{
+  width:46px;
+  height:46px;
+  display:grid;
+  place-items:center;
+  border-radius:12px;
+  background:#0d6efd;
+  color:#fff;
+  box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+.footer-list{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+.footer-list li{
+  display:flex;
+  align-items:center;
+  gap:.65rem;
+  padding:.35rem 0;
+  color:#e5e7eb;
+}
+
+.footer-list i{
+  width:18px;
+  text-align:center;
+}
+
+.footer-meta{
+  border-top:1px solid rgba(255,255,255,.08);
+  margin-top:24px;
+  padding-top:18px;
+  color:#9ca3af;
+  font-size:.9rem;
 }
 
 .table{
