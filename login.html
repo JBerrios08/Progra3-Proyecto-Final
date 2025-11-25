@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <title>Ferro Oriente | Contacto</title>
+  <title>Ferro Oriente | Acceso</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -25,7 +25,7 @@
         <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
         <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
         <li class="nav-item"><a class="nav-link" href="tienda.html">Tienda</a></li>
-        <li class="nav-item"><a class="nav-link active" href="contacto.html">Contacto</a></li>
+        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
       </ul>
 
       <div class="d-flex align-items-center gap-3">
@@ -47,39 +47,74 @@
 
 <!-- CONTENIDO -->
 <div class="container py-5">
-  <h2 class="fw-bold mb-3">Contáctanos</h2>
-  <p class="text-muted">¿Tenés dudas o necesitás ayuda? Escribinos.</p>
-
-  <div class="row g-3">
-    <div class="col-md-6">
-      <div class="card p-3">
-        <form onsubmit="event.preventDefault(); alert('Gracias por contactarnos.'); this.reset();">
-          <div class="mb-2">
-            <label class="form-label">Nombre</label>
-            <input class="form-control" required>
-          </div>
-          <div class="mb-2">
-            <label class="form-label">Correo</label>
-            <input class="form-control" type="email" required>
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Mensaje</label>
-            <textarea class="form-control" rows="4" required></textarea>
-          </div>
-          <button class="btn btn-primary w-100">
-            <i class="fa-solid fa-paper-plane me-1"></i> Enviar
-          </button>
-        </form>
-      </div>
+  <div class="row align-items-center g-4">
+    <div class="col-lg-5">
+      <h1 class="fw-bold mb-3">Acceso a tu cuenta</h1>
+      <p class="text-muted mb-4">
+        Inicia sesión para gestionar el catálogo según tu rol o registrate para comprar.
+        Admin y supervisor pueden crear y actualizar productos; los demás roles solo
+        navegan la tienda.
+      </p>
+      <ul class="list-unstyled text-muted small mb-0">
+        <li><i class="fa-solid fa-lock me-2"></i>Sesión guardada sin exponer contraseñas.</li>
+        <li><i class="fa-solid fa-shield-halved me-2"></i>Accesos restringidos por rol.</li>
+        <li><i class="fa-solid fa-cart-plus me-2"></i>Carrito disponible para todos los clientes.</li>
+      </ul>
     </div>
 
-    <div class="col-md-6">
-      <div class="card p-3 h-100">
-        <h5 class="fw-bold mb-3"><i class="fa-solid fa-location-dot me-2"></i>Ubicación</h5>
-        <p class="mb-1"><b>Dirección:</b> San Miguel, El Salvador</p>
-        <p class="mb-1"><b>Teléfono:</b> +503 0000-0000</p>
-        <p class="mb-1"><b>Email:</b> contacto@ferrooriente.com</p>
-        <p class="mb-0"><b>Horario:</b> Lunes a Sábado 8:00am — 5:00pm</p>
+    <div class="col-lg-7">
+      <div class="row g-3">
+        <div class="col-md-6" id="registro">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="fw-bold mb-3"><i class="fa-solid fa-right-to-bracket me-2"></i>Iniciar sesión</h5>
+              <div id="loginAlert" class="alert alert-danger d-none" role="alert"></div>
+              <form id="loginForm" class="d-grid gap-3">
+                <div>
+                  <label class="form-label">Correo</label>
+                  <input class="form-control" type="email" name="correo" placeholder="correo@dominio.com" required>
+                </div>
+                <div>
+                  <label class="form-label">Contraseña</label>
+                  <input class="form-control" type="password" name="password" placeholder="********" required>
+                </div>
+                <button class="btn btn-primary w-100">
+                  <i class="fa-solid fa-arrow-right-to-bracket me-1"></i> Entrar
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card h-100 shadow-sm border-success">
+            <div class="card-body">
+              <h5 class="fw-bold mb-3 text-success"><i class="fa-solid fa-user-plus me-2"></i>Crear cuenta</h5>
+              <div id="registerAlert" class="alert alert-danger d-none" role="alert"></div>
+              <form id="registerForm" class="d-grid gap-3">
+                <div>
+                  <label class="form-label">Nombre</label>
+                  <input class="form-control" name="nombre" placeholder="Tu nombre" required>
+                </div>
+                <div>
+                  <label class="form-label">Correo</label>
+                  <input class="form-control" type="email" name="correo" placeholder="correo@dominio.com" required>
+                </div>
+                <div>
+                  <label class="form-label">Contraseña</label>
+                  <input class="form-control" type="password" name="password" minlength="6" placeholder="Mínimo 6 caracteres" required>
+                </div>
+                <div>
+                  <label class="form-label">Confirmar contraseña</label>
+                  <input class="form-control" type="password" name="password2" minlength="6" placeholder="Repite la contraseña" required>
+                </div>
+                <button class="btn btn-success w-100">
+                  <i class="fa-solid fa-floppy-disk me-1"></i> Registrarme
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -96,18 +131,20 @@
 <script src="assets/js/storage.js"></script>
 <script src="assets/js/auth.js"></script>
 <script src="assets/js/carrito.js"></script>
+<script src="assets/js/login.js"></script>
 
 <script>
   const user = getSession();
   const menu = document.querySelector("#userMenu");
+  const canAccessPanel = user && ["admin", "supervisor"].includes(user.rol);
 
-  if(!user){
+  if (!user) {
     menu.innerHTML = `
       <li><a class="dropdown-item" href="login.html">Ingresar</a></li>
       <li><a class="dropdown-item" href="login.html#registro">Registrarme</a></li>
     `;
   } else {
-    let panelBtn = user.rol !== "usuario" ? `<li><a class="dropdown-item" href="admin.html">Panel</a></li>` : "";
+    let panelBtn = canAccessPanel ? `<li><a class="dropdown-item" href="admin.html">Panel</a></li>` : "";
     menu.innerHTML = `
       <li class="px-3 py-2 small text-muted">Hola, ${user.nombre} (${user.rol})</li>
       ${panelBtn}
